@@ -149,24 +149,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form submission handling
-const contactForm = document.getElementById('contactForm');
+emailjs.init("JOfxD9iEscJN__bvg");
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Show success message
-    showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-    
-    // Reset form
-    contactForm.reset();
-    
-    // Here you would typically send the data to a server
-    console.log('Form data:', data);
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "service_l5t149l",
+    "template_5uwvcfp",
+    this
+  ).then(() => {
+    alert("Message sent successfully!");
+    this.reset();
+  }, (error) => {
+    alert("Something went wrong!");
+    console.log(error);
+  });
 });
+
 
 // Notification function
 function showNotification(message, type) {
@@ -405,3 +405,13 @@ setInterval(() => {
   currentIndex = (currentIndex + 1) % certificates.length;
   showSlide(currentIndex);
 }, 4000);
+
+
+// // form service
+// emailjs.init("JOfxD9iEscJN__bvg");
+
+// emailjs.sendForm(
+//   "service_l5t149l",
+//   "template_5uwvcfp",
+//   this
+// )
