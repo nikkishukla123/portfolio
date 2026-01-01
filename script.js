@@ -378,3 +378,30 @@ document.head.appendChild(rainbowStyle);
 
 console.log('%c👋 Hey there! Thanks for checking out my portfolio!', 'font-size: 20px; color: #6366f1; font-weight: bold;');
 console.log('%cInterested in working together? Let\'s connect!', 'font-size: 14px; color: #8b5cf6;');
+
+// certification section
+let currentIndex = 0;
+const certificates = document.querySelectorAll(".certificate");
+
+function showSlide(index) {
+  certificates.forEach((img, i) => {
+    img.classList.remove("active");
+    if (i === index) img.classList.add("active");
+  });
+}
+
+document.querySelector(".next").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % certificates.length;
+  showSlide(currentIndex);
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + certificates.length) % certificates.length;
+  showSlide(currentIndex);
+});
+
+// Auto slide every 4 seconds
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % certificates.length;
+  showSlide(currentIndex);
+}, 4000);
