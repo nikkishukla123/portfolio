@@ -8,6 +8,23 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
 
+// Hero image loading handler
+const heroPhoto = document.getElementById('heroPhoto');
+if (heroPhoto) {
+    heroPhoto.addEventListener('load', function() {
+        this.style.opacity = '1';
+    });
+    
+    heroPhoto.addEventListener('error', function() {
+        console.log('Hero image failed to load, showing placeholder');
+        this.style.display = 'none';
+    });
+    
+    // Add fade-in effect
+    heroPhoto.style.opacity = '0';
+    heroPhoto.style.transition = 'opacity 0.5s ease';
+}
+
 // Close mobile menu when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
