@@ -225,7 +225,7 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Typing effect for hero section
-const texts = ['Full Stack Developer', 'Problem Solver', 'Tech Enthusiast', 'UI/UX Designer'];
+const texts = ['Mern Stack Developer', 'Problem Solver', 'Tech Enthusiast', 'Backend Developer'];
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
