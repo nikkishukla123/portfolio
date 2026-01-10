@@ -2,7 +2,7 @@
 
 A modern, responsive personal portfolio website showcasing my skills, projects, and experience as a MERN Stack Developer and Computer Science Engineering student.
 
-![Portfolio Preview](image.png)
+![Portfolio Preview]
 
 ## 🌟 Features
 
